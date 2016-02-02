@@ -1,12 +1,47 @@
 {
+    "name": "locastic/msan-api",
+    "type": "library",
+    "description": "M SAN d.d. API",
+    "keyword": [
+        "M SAN",
+        "web",
+        "services",
+        "hardware",
+        "store"
+    ],
+    "homepage": "http://www.locastic.com",
+    "license": "MIT",
+    "minimum-stability": "stable",
+    "authors": [
+        {
+            "name": "locastic",
+            "homepage": "http://locastic.com",
+            "email": "info@locastic.com"
+        },
+        {
+            "name": "Frano Barać",
+            "email": "frano@locastic.com",
+            "homepage": "http://locastic.com"
+        }
+    ],
     "require": {
-        "raveren/kint": "^1.0",
+        "php": ">=5.3.2",
         "sensio/buzz-bundle": "^1.0",
         "monolog/monolog": "^1.17"
     },
+    "require-dev": {
+        "raveren/kint": "^1.0",
+        "phpunit/phpunit": "^4.7"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
     "autoload": {
         "psr-0": {
-            "Locastic\\Handler": "src/"
+            "Locastic\\Handler": "src/",
+            "Locastic\\Settings": "src/",
+            "Locastic\\Reader": "src/",
+            "Locastic\\Helpers": "src/"
         }
     }
 }

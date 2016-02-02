@@ -2,19 +2,19 @@
 
 namespace Locastic\Settings;
 
-class CurlSettings
+
+use Locastic\Helpers\Resources;
+
+class ApiSettings
 {
     /**
      * @var array
      */
     private $settings;
 
-    /**
-     * @param array $settings
-     */
-    public function __construct(array $settings)
+    public function __construct()
     {
-        $this->settings = $settings;
+        $this->settings = array('api_endpoint' => Resources::API_ENDPOINT);
     }
 
     /**
