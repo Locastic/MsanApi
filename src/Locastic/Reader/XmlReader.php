@@ -9,7 +9,7 @@ class XmlReader implements ReaderInterface
     /**
      * @var \SimpleXMLElement
      */
-    protected $data;
+    private $data;
 
     /**
      * @param Response $response
