@@ -91,7 +91,7 @@ class ApiHandler
         if ($headers) {
             $request->setHeaders($headers);
         }
-//        ddd($request);
+        
         return $this->sendRequest($request);
     }
 
