@@ -1,0 +1,12 @@
+{
+    "require": {
+        "raveren/kint": "^1.0",
+        "sensio/buzz-bundle": "^1.0",
+        "monolog/monolog": "^1.17"
+    },
+    "autoload": {
+        "psr-0": {
+            "Locastic\\Handler": "src/"
+        }
+    }
+}
