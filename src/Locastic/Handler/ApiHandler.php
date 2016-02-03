@@ -7,6 +7,7 @@ use Buzz\Message\Form\FormRequest;
 use Buzz\Browser;
 use Buzz\Message\Response;
 
+use Locastic\Helpers\ApiData;
 use Locastic\Reader\ReaderInterface;
 use Locastic\Settings\ApiSettings;
 use Locastic\Settings\CurlSettings;
@@ -100,7 +101,7 @@ class ApiHandler
 
     /**
      * @param FormRequest $request
-     * @return mixed
+     * @return ApiData
      */
     private function sendRequest(FormRequest $request)
     {
@@ -109,7 +110,7 @@ class ApiHandler
          */
         $response = $this->browser->send($request);
 
-        return $this->reader->read($response);
+        return new ApiData($response, $this->reader->read($response));
     }
 
 

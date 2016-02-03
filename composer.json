@@ -31,7 +31,7 @@
     },
     "require-dev": {
         "raveren/kint": "^1.0",
-        "phpunit/phpunit": "^4.7"
+        "phpunit/phpunit": "4.8"
     },
     "config": {
         "bin-dir": "bin"
@@ -41,7 +41,8 @@
             "Locastic\\Handler": "src/",
             "Locastic\\Settings": "src/",
             "Locastic\\Reader": "src/",
-            "Locastic\\Helpers": "src/"
+            "Locastic\\Helpers": "src/",
+            "Locastic\\Test": "src/"
         }
     }
 }

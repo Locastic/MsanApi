@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9a9fcd08abe222e99711e49c2933c654",
-    "content-hash": "7a1ae493616a9aa4aa09cd65a43283f8",
+    "hash": "b78bfcd9fa16700cf3013a3e003e6d4d",
+    "content-hash": "6bc6c9dafbcdafc295051b950f370d24",
     "packages": [
         {
             "name": "kriswallsmith/buzz",
@@ -625,16 +625,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.22",
+            "version": "4.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "dfb11aa5236376b4fc63853cf746af39fe780e72"
+                "reference": "283111a903eb9225aedb95e846bef876e006a688"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/dfb11aa5236376b4fc63853cf746af39fe780e72",
-                "reference": "dfb11aa5236376b4fc63853cf746af39fe780e72",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/283111a903eb9225aedb95e846bef876e006a688",
+                "reference": "283111a903eb9225aedb95e846bef876e006a688",
                 "shasum": ""
             },
             "require": {
@@ -693,7 +693,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2016-02-02 09:01:21"
+            "time": "2015-08-07 03:57:43"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
