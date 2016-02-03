@@ -34,6 +34,11 @@ class ApiHandler
     private $apiSettings;
 
 
+    /**
+     * @param CurlSettings $curlSettings
+     * @param ApiSettings $apiSettings
+     * @param ReaderInterface $reader
+     */
     public function __construct(CurlSettings $curlSettings = null, ApiSettings $apiSettings, ReaderInterface $reader)
     {
         $this->client = new Curl();
