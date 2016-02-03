@@ -10,8 +10,6 @@ use Buzz\Exception;
 
 class ApiTest extends \PHPUnit_Framework_TestCase
 {
-    protected $client;
-
 
     public function testData()
     {
