@@ -39,14 +39,12 @@ class ApiHandler
      * @param ApiSettings $apiSettings
      * @param ReaderInterface $reader
      */
-    public function __construct(CurlSettings $curlSettings = null, ApiSettings $apiSettings, ReaderInterface $reader)
+    public function __construct(CurlSettings $curlSettings, ApiSettings $apiSettings, ReaderInterface $reader)
     {
         $this->client = new Curl();
 
         $this->apiSettings = $apiSettings->getSettings();
-
-        if ($curlSettings)
-            $this->setCurlOptions($this->client, $curlSettings->getSettings());
+        $this->setCurlOptions($this->client, $curlSettings->getSettings());
 
         $this->browser = new Browser($this->client);
         $this->reader = $reader;
