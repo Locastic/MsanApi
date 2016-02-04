@@ -61,7 +61,6 @@ class ProductsTest extends \PHPUnit_Framework_TestCase
          */
         $apiData = $this->productXmlHandler->getProductsCategories();
 
-
         $this->assertObjectHasAttribute('CategoryID', $apiData->getData()->Table[0]);
         $this->assertObjectHasAttribute('CategoryName', $apiData->getData()->Table[0]);
     }
