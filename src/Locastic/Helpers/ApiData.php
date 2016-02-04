@@ -23,8 +23,8 @@ class ApiData
      */
     public function __construct(Response $response, $data)
     {
-        $this->data = $data;
         $this->apiResponse = $response;
+        $this->data = $data;
     }
 
     /**

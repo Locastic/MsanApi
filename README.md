@@ -30,11 +30,11 @@ Available parameters for http requests:
 
     PRODUCT LIST:
 
-        1) Products by type
+        1) Products by code
 
             https://b2b.msan.hr/B2BService/HTTP/Products/GetProductsList.aspx?ProductCode=0220448
 
-        2) Products by code
+        2) Products by type
 
             https://b2b.msan.hr/B2BService/HTTP/Products/GetProductsList.aspx?ProductType=Procesor
 

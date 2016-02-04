@@ -11,7 +11,7 @@ use Buzz\Exception;
 class ApiTest extends \PHPUnit_Framework_TestCase
 {
 
-    public function testData()
+    public function testDataResponse()
     {
         $apiHandler = $this->getMockBuilder('ApiHandler')->getMock();
         $data = $this->getMockBuilder('ApiData')->getMock();
@@ -19,9 +19,9 @@ class ApiTest extends \PHPUnit_Framework_TestCase
         $apiHandler
             ->expects($this->any())
             ->method('makeRequest')
-            ->with(FormRequest::METHOD_GET, Resources::API_ENDPOINT);
+            ->with(FormRequest::METHOD_GET, Resources::API_ENDPOINT)
+            ->willReturn($this->returnValue($data));
 
-        $this->assertInstanceOf('ApiData', $data);
     }
 
 }
