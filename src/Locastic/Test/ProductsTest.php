@@ -206,6 +206,15 @@ class ProductsTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->productXmlHandler = new ProductHandler(new CurlSettings(), new ApiSettings(), new XmlReader());
+        $curlSettings = array(
+            (string)CURLOPT_SSL_VERIFYPEER => 1,
+            (string)CURLOPT_CAINFO => 'certs/ca.pem',
+            (string)CURLOPT_SSLCERT => 'certs/client.pem',
+            (string)CURLOPT_SSLKEY => 'certs/key.pem',
+            (string)CURLOPT_SSLKEYPASSWD => '1234',
+            (string)CURLOPT_TIMEOUT => 300
+        );
+
+        $this->productXmlHandler = new ProductHandler(new CurlSettings($curlSettings), new ApiSettings(), new XmlReader());
     }
 }
