@@ -10,22 +10,41 @@ class CurlSettings
     private $settings;
 
     /**
+     * @var array
+     */
+    private $mandatorySettings;
+
+    /**
      * @param array $settings
      */
-    public function __construct(array $settings = null)
+    public function __construct(array $settings)
     {
-        $this->settings = array(
-//            (string)CURLOPT_VERBOSE => 1,
-            (string)CURLOPT_SSL_VERIFYPEER => 1,
-            (string)CURLOPT_CAINFO => 'certs/ca.pem',
-            (string)CURLOPT_SSLCERT => 'certs/client.pem',
-            (string)CURLOPT_SSLKEY => 'certs/key.pem',
-            (string)CURLOPT_SSLKEYPASSWD => '1234',
-            (string)CURLOPT_TIMEOUT => 300,
-        );
+        $this->mandatorySettings = array('64', '10065', '10025', '10087', '10026');
 
-        if ($settings)
-            $this->settings += $settings;
+        if (!$settings) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "\n" . "Please provide mandatory cURL arguments with constants casted to strings:" . "\n" .
+                    "(string)CURLOPT_SSL_VERIFYPEER => 1," . "\n" .
+                    "(string)CURLOPT_CAINFO => 'certs/ca.pem'" . "\n" .
+                    "(string)CURLOPT_SSLCERT => 'certs/client.pem'" . "\n" .
+                    "(string)CURLOPT_SSLKEY => 'certs/key.pem'" . "\n" .
+                    "(string)CURLOPT_SSLKEYPASSWD => '1234'" . "\n"
+                )
+            );
+        } elseif (count(array_intersect_key(array_flip($this->mandatorySettings), $settings)) === count($this->mandatorySettings)) {
+            $this->settings = $settings;
+        } else {
+            throw new \InvalidArgumentException(sprintf(
+                    "\n" . "Please provide mandatory cURL arguments with constants casted to strings:" . "\n" .
+                    "(string)CURLOPT_SSL_VERIFYPEER => 1," . "\n" .
+                    "(string)CURLOPT_CAINFO => 'certs/ca.pem'" . "\n" .
+                    "(string)CURLOPT_SSLCERT => 'certs/client.pem'" . "\n" .
+                    "(string)CURLOPT_SSLKEY => 'certs/key.pem'" . "\n" .
+                    "(string)CURLOPT_SSLKEYPASSWD => '1234'" . "\n"
+                )
+            );
+        }
     }
 
     /**
