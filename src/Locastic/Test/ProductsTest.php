@@ -16,7 +16,43 @@ class ProductsTest extends \PHPUnit_Framework_TestCase
      */
     protected $productXmlHandler;
 
-    public function testProductsListValidOutputXml()
+    public function testProductListValidOutputXml()
+    {
+        /**
+         * @var ApiData
+         */
+        $apiData = $this->productXmlHandler->getProductsList();
+
+        $this->assertEquals(200, $apiData->getApiResponse()->getStatusCode());
+        $this->assertInstanceOf('SimpleXMLElement', $apiData->getData());
+
+    }
+
+    public function testProductPriceListValidOutputXml()
+    {
+        /**
+         * @var ApiData
+         */
+        $apiData = $this->productXmlHandler->getProductsList();
+
+        $this->assertEquals(200, $apiData->getApiResponse()->getStatusCode());
+        $this->assertInstanceOf('SimpleXMLElement', $apiData->getData());
+
+    }
+
+    public function testProductAvailabilityValidOutputXml()
+    {
+        /**
+         * @var ApiData
+         */
+        $apiData = $this->productXmlHandler->getProductsAvailability();
+
+        $this->assertEquals(200, $apiData->getApiResponse()->getStatusCode());
+        $this->assertInstanceOf('SimpleXMLElement', $apiData->getData());
+
+    }
+
+    public function testProductCategoriesValidOutputXml()
     {
         /**
          * @var ApiData
@@ -28,7 +64,44 @@ class ProductsTest extends \PHPUnit_Framework_TestCase
 
     }
 
-    public function testProductListDataStructure()
+    public function testProductCategorisationValidOutputXml()
+    {
+        /**
+         * @var ApiData
+         */
+        $apiData = $this->productXmlHandler->getProductsCategorisation();
+
+        $this->assertEquals(200, $apiData->getApiResponse()->getStatusCode());
+        $this->assertInstanceOf('SimpleXMLElement', $apiData->getData());
+
+    }
+
+    public function testProductBarcodesValidOutputXml()
+    {
+        /**
+         * @var ApiData
+         */
+        $apiData = $this->productXmlHandler->getProductsBarcodes();
+
+        $this->assertEquals(200, $apiData->getApiResponse()->getStatusCode());
+        $this->assertInstanceOf('SimpleXMLElement', $apiData->getData());
+
+    }
+
+    public function testProductSpecificationValidOutputXml()
+    {
+        /**
+         * @var ApiData
+         */
+        $apiData = $this->productXmlHandler->getProductsSpecification();
+
+        $this->assertEquals(200, $apiData->getApiResponse()->getStatusCode());
+        $this->assertInstanceOf('SimpleXMLElement', $apiData->getData());
+
+    }
+
+
+    public function testProductListByTypeXmlDataStructure()
     {
         /**
          * @var ApiData
@@ -48,13 +121,53 @@ class ProductsTest extends \PHPUnit_Framework_TestCase
         $this->assertObjectHasAttribute('PackageDimensionHeight', $apiData->getData()->Table[0]);
         $this->assertObjectHasAttribute('TechnicalDescription', $apiData->getData()->Table[0]);
         $this->assertObjectHasAttribute('MarketingDescription', $apiData->getData()->Table[0]);
-        $this->assertObjectHasAttribute('ProductImageurl', $apiData->getData()->Table[0]);
+        $this->assertObjectHasAttribute('ProductImageUrl', $apiData->getData()->Table[0]);
         $this->assertObjectHasAttribute('IsComputerComponent', $apiData->getData()->Table[0]);
         $this->assertObjectHasAttribute('ChangeDateTime', $apiData->getData()->Table[0]);
         $this->assertObjectHasAttribute('BrojPovratnihNaknada', $apiData->getData()->Table[0]);
     }
 
-    public function testProductCategoriesDataStructure()
+    public function testProductPriceListXmlDataStructure()
+    {
+        /**
+         * @var ApiData
+         */
+        $apiData = $this->productXmlHandler->getProductsPriceList();
+
+        $this->assertObjectHasAttribute('ProductCode', $apiData->getData()->Table[0]);
+        $this->assertObjectHasAttribute('ProductListPrice', $apiData->getData()->Table[0]);
+        $this->assertObjectHasAttribute('ProductDiscount', $apiData->getData()->Table[0]);
+        $this->assertObjectHasAttribute('ProductPartnerPrice', $apiData->getData()->Table[0]);
+        $this->assertObjectHasAttribute('RecommendedRetailPrice', $apiData->getData()->Table[0]);
+        $this->assertObjectHasAttribute('ProductAvailability', $apiData->getData()->Table[0]);
+        $this->assertObjectHasAttribute('OnPromotion', $apiData->getData()->Table[0]);
+
+    }
+
+    public function testProductAvailabilityXmlDataStructure()
+    {
+        /**
+         * @var ApiData
+         */
+        $apiData = $this->productXmlHandler->getProductsAvailability();
+
+        $this->assertObjectHasAttribute('ProductCode', $apiData->getData()->Table[0]);
+        $this->assertObjectHasAttribute('ProductAvailability', $apiData->getData()->Table[0]);
+    }
+
+
+    public function testProductCategorisationXmlDataStructure()
+    {
+        /**
+         * @var ApiData
+         */
+        $apiData = $this->productXmlHandler->getProductsCategorisation();
+
+        $this->assertObjectHasAttribute('ProductCode', $apiData->getData()->Table[0]);
+        $this->assertObjectHasAttribute('CategoryID', $apiData->getData()->Table[0]);
+    }
+
+    public function testProductCategoriesXmlLDataStructure()
     {
         /**
          * @var ApiData
@@ -63,6 +176,32 @@ class ProductsTest extends \PHPUnit_Framework_TestCase
 
         $this->assertObjectHasAttribute('CategoryID', $apiData->getData()->Table[0]);
         $this->assertObjectHasAttribute('CategoryName', $apiData->getData()->Table[0]);
+    }
+
+    public function testProductBarcodesXmlLDataStructure()
+    {
+        /**
+         * @var ApiData
+         */
+        $apiData = $this->productXmlHandler->getProductsBarcodes();
+
+        $this->assertObjectHasAttribute('ProductCode', $apiData->getData()->Table[0]);
+        $this->assertObjectHasAttribute('BarcodeType', $apiData->getData()->Table[0]);
+        $this->assertObjectHasAttribute('BarcodeValue', $apiData->getData()->Table[0]);
+    }
+
+    public function testProductSpecificationXmlLDataStructure()
+    {
+        /**
+         * @var ApiData
+         */
+        $apiData = $this->productXmlHandler->getProductsSpecification();
+
+        $this->assertObjectHasAttribute('ProductCode', $apiData->getData()->Table[0]);
+        $this->assertObjectHasAttribute('SpecificationGroup', $apiData->getData()->Table[0]);
+        $this->assertObjectHasAttribute('SpecificationItemNo', $apiData->getData()->Table[0]);
+        $this->assertObjectHasAttribute('SpecificationItemName', $apiData->getData()->Table[0]);
+        $this->assertObjectHasAttribute('SpecificationItemValues', $apiData->getData()->Table[0]);
     }
 
     protected function setUp()
