@@ -1,17 +1,21 @@
 <?php
 
-namespace Locastic\Handler;
+namespace Locastic\MsanApi\Handler;
 
 use Buzz\Client\Curl;
 use Buzz\Message\Form\FormRequest;
 use Buzz\Browser;
 use Buzz\Message\Response;
 
-use Locastic\Helpers\ApiData;
-use Locastic\Reader\ReaderInterface;
-use Locastic\Settings\ApiSettings;
-use Locastic\Settings\CurlSettings;
+use Locastic\MsanApi\Helpers\ApiData;
+use Locastic\MsanApi\Reader\ReaderInterface;
+use Locastic\MsanApi\Settings\ApiSettings;
+use Locastic\MsanApi\Settings\CurlSettings;
 
+/**
+ * Class ApiHandler
+ * @package Locastic\MsanApi\Handler
+ */
 class ApiHandler
 {
     /**
@@ -95,7 +99,7 @@ class ApiHandler
         if ($headers) {
             $request->setHeaders($headers);
         }
-        
+
         return $this->sendRequest($request);
     }
 

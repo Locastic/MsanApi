@@ -1,12 +1,8 @@
 <?php
 
-namespace Locastic\Test;
-
-
 use Buzz\Message\Form\FormRequest;
-use Locastic\Helpers\Resources;
+use Locastic\MsanApi\Helpers\Resources;
 use Buzz\Exception;
-
 
 class ApiTest extends \PHPUnit_Framework_TestCase
 {

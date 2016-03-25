@@ -1,10 +1,13 @@
 <?php
 
-namespace Locastic\Settings;
+namespace Locastic\MsanApi\Settings;
 
+use Locastic\MsanApi\Helpers\Resources;
 
-use Locastic\Helpers\Resources;
-
+/**
+ * Class ApiSettings
+ * @package Locastic\MsanApi\Settings
+ */
 class ApiSettings
 {
     /**
@@ -12,6 +15,9 @@ class ApiSettings
      */
     private $settings;
 
+    /**
+     * ApiSettings constructor.
+     */
     public function __construct()
     {
         $this->settings = array('api_endpoint' => Resources::API_ENDPOINT);

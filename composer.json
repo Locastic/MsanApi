@@ -1,18 +1,18 @@
 {
     "name": "locastic/msan-api",
     "type": "library",
-    "description": "Library for integration with M-SAN partner Api services",
+    "description": "Library for integration with M SAN partner Api services",
     "keyword": [
         "M SAN",
         "partner",
         "web",
         "services",
-        "hardware",
         "store",
         "ecommerce",
         "integration",
         "php",
-        "m-san"
+        "affiliate",
+        "api"
     ],
     "homepage": "http://www.locastic.com",
     "license": "MIT",
@@ -36,7 +36,7 @@
     ],
     "require": {
         "php": "^5.5.9|^7.0",
-        "sensio/buzz-bundle": "^1.0"
+        "kriswallsmith/buzz": "^0.15.0"
     },
     "require-dev": {
         "raveren/kint": "^1.0",
@@ -47,11 +47,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Locastic\\Handler": "src/",
-            "Locastic\\Settings": "src/",
-            "Locastic\\Reader": "src/",
-            "Locastic\\Helpers": "src/",
-            "Locastic\\Test": "src/"
+            "Locastic\\MsanApi": "src/"
         }
     }
 }

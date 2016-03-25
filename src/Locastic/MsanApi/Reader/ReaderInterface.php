@@ -1,9 +1,13 @@
 <?php
 
-namespace Locastic\Reader;
+namespace Locastic\MsanApi\Reader;
 
 use Buzz\Message\Response;
 
+/**
+ * Interface ReaderInterface
+ * @package Locastic\MsanApi\Reader
+ */
 interface ReaderInterface
 {
     /**

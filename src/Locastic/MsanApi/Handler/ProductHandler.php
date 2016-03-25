@@ -1,9 +1,13 @@
 <?php
 
-namespace Locastic\Handler;
+namespace Locastic\MsanApi\Handler;
 
-use Locastic\Helpers\Resources;
+use Locastic\MsanApi\Helpers\Resources;
 
+/**
+ * Class ProductHandler
+ * @package Locastic\MsanApi\Handler
+ */
 class ProductHandler extends ApiHandler
 {
     /**

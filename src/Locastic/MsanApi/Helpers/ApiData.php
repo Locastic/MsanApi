@@ -1,10 +1,13 @@
 <?php
 
-namespace Locastic\Helpers;
+namespace Locastic\MsanApi\Helpers;
 
 use Buzz\Message\Response;
 
-
+/**
+ * Class ApiData
+ * @package Locastic\MsanApi\Helpers
+ */
 class ApiData
 {
     /**

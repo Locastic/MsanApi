@@ -1,9 +1,13 @@
 <?php
 
-namespace Locastic\Reader;
+namespace Locastic\MsanApi\Reader;
 
 use Buzz\Message\Response;
 
+/**
+ * Class XmlReader
+ * @package Locastic\MsanApi\Reader
+ */
 class XmlReader implements ReaderInterface
 {
     /**
