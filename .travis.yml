@@ -6,3 +6,14 @@ php:
   - hhvm
   - nightly
 
+cache:
+    directories:
+        - ~/.composer/cache/files
+
+sudo: false
+
+before_install:
+  - composer self-update
+
+install:
+  - composer install --no-interaction --no-scripts --prefer-dist
