@@ -40,7 +40,7 @@
     },
     "require-dev": {
         "raveren/kint": "^1.0",
-        "phpunit/phpunit": "~4.1",
+        "phpunit/phpunit": "~4.1"
     },
     "config": {
         "bin-dir": "bin"
