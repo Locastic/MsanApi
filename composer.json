@@ -1,9 +1,10 @@
 {
     "name": "locastic/msan-api",
     "type": "library",
-    "description": "Library for integration with M-SAN group Api services",
+    "description": "Library for integration with M-SAN partner Api services",
     "keyword": [
         "M SAN",
+        "partner",
         "web",
         "services",
         "hardware",
@@ -23,7 +24,7 @@
             "email": "info@locastic.com"
         },
         {
-            "name": "Frano Barać",
+            "name": "Frano Barac",
             "email": "frano@locastic.com",
             "homepage": "http://locastic.com"
         },
@@ -34,13 +35,12 @@
         }
     ],
     "require": {
-        "php": ">=5.3.2",
-        "sensio/buzz-bundle": "^1.0",
-        "monolog/monolog": "^1.17"
+        "php": "^5.5.9|^7.0",
+        "sensio/buzz-bundle": "^1.0"
     },
     "require-dev": {
         "raveren/kint": "^1.0",
-        "phpunit/phpunit": "4.8"
+        "phpunit/phpunit": "~4.1",
     },
     "config": {
         "bin-dir": "bin"
