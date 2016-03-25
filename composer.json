@@ -1,13 +1,17 @@
 {
     "name": "locastic/msan-api",
     "type": "library",
-    "description": "M SAN d.d. API",
+    "description": "Library for integration with M-SAN group Api services",
     "keyword": [
         "M SAN",
         "web",
         "services",
         "hardware",
-        "store"
+        "store",
+        'ecommerce',
+        'integration',
+        'php',
+        'm-san'
     ],
     "homepage": "http://www.locastic.com",
     "license": "MIT",
