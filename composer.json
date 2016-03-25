@@ -8,10 +8,10 @@
         "services",
         "hardware",
         "store",
-        'ecommerce',
-        'integration',
-        'php',
-        'm-san'
+        "ecommerce",
+        "integration",
+        "php",
+        "m-san"
     ],
     "homepage": "http://www.locastic.com",
     "license": "MIT",
@@ -25,6 +25,11 @@
         {
             "name": "Frano Barać",
             "email": "frano@locastic.com",
+            "homepage": "http://locastic.com"
+        },
+        {
+            "name": "Antonio Peric-Mazar",
+            "email": "antonio@locastic.com",
             "homepage": "http://locastic.com"
         }
     ],
