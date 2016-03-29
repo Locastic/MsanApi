@@ -23,7 +23,6 @@ class CurlSettings
      */
     public function __construct(array $settings)
     {
-        // todo decouple this settings
         $this->mandatorySettings = array('64', '10065', '10025', '10087', '10026');
 
         if (!$settings) {
