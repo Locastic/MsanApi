@@ -1,13 +1,10 @@
 <?php
 
-namespace Locastic\Test;
-
-
-use Locastic\Handler\DocumentHandler;
-use Locastic\Helpers\ApiData;
-use Locastic\Reader\XmlReader;
-use Locastic\Settings\ApiSettings;
-use Locastic\Settings\CurlSettings;
+use Locastic\MsanApi\Handler\DocumentHandler;
+use Locastic\MsanApi\Helpers\ApiData;
+use Locastic\MsanApi\Reader\XmlReader;
+use Locastic\MsanApi\Settings\ApiSettings;
+use Locastic\MsanApi\Settings\CurlSettings;
 
 class DocumentsTest extends \PHPUnit_Framework_TestCase
 {
@@ -85,9 +82,13 @@ class DocumentsTest extends \PHPUnit_Framework_TestCase
             (string)CURLOPT_SSLCERT => 'certs/client.pem',
             (string)CURLOPT_SSLKEY => 'certs/key.pem',
             (string)CURLOPT_SSLKEYPASSWD => '1234',
-            (string)CURLOPT_TIMEOUT => 300
+            (string)CURLOPT_TIMEOUT => 300,
         );
 
-        $this->documentXmlHandler = new DocumentHandler(new CurlSettings($curlSettings), new ApiSettings(), new XmlReader());
+        $this->documentXmlHandler = new DocumentHandler(
+            new CurlSettings($curlSettings),
+            new ApiSettings(),
+            new XmlReader()
+        );
     }
 }

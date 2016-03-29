@@ -1,7 +1,11 @@
 <?php
 
-namespace Locastic\Helpers;
+namespace Locastic\MsanApi\Helpers;
 
+/**
+ * Class Resources
+ * @package Locastic\MsanApi\Helpers
+ */
 class Resources
 {
     const API_ENDPOINT = 'https://b2b.msan.hr/B2BService/HTTP/';
