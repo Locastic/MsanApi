@@ -152,3 +152,20 @@ Available parameters for http requests:
             https://b2b.msan.hr/B2BService/HTTP/Document/GetDocumentsItems.aspx?DocumentNoFrom=1&DocumentNoTo=1000&DocumentDateFrom=01.01.2008&DocumentDateTo=30.06.2008&DocumentType=OTP
 
 
+## Usage example
+
+    $test = new ProductHandler(
+        new CurlSettings(array(
+           (string)CURLOPT_VERBOSE => 1,
+           (string)CURLOPT_SSL_VERIFYPEER => 1,
+           (string)CURLOPT_CAINFO => 'certs/ca.pem',
+           (string)CURLOPT_SSLCERT => 'certs/client.pem',
+           (string)CURLOPT_SSLKEY => 'certs/key.pem',
+           (string)CURLOPT_SSLKEYPASSWD => '1234',
+           (string)CURLOPT_TIMEOUT => 300
+        )),
+        new ApiSettings(),
+        new XmlReader()
+    );
+
+    $productData = $test->getProductsList();
